@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>지정 폴더 삭제 스케쥴러</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f9fafb; /* 아주 밝은 회색 배경 */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            color: #1a1a1a;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        div {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 450px;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        button, input[type="time"] {
+            font-family: inherit;
+            font-size: 15px;
+            padding: 12px 20px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            background-color: #ffffff;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background-color: #f5f5f5;
+        }
+
+        input[type="time"] {
+            width: 100%;
+            padding: 12px;
+        }
+
+        #selectBtn {
+            background-color: #007bff; /* 파란색 강조 버튼 */
+            color: #ffffff;
+            border-color: #007bff;
+            height: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #selectBtn:hover {
+            background-color: #0056b3;
+        }
+
+        #folderPath {
+            font-size: 15px;
+            margin-left: 15px;
+            color: #777;
+            background-color: #f5f5f5;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        #registerBtn {
+            background-color: #28a745; /* 녹색 강조 버튼 */
+            border-color: #28a745;
+            color: #ffffff;
+            margin-right: 10px;
+        }
+
+        #registerBtn:hover {
+            background-color: #218838;
+        }
+
+        #removeBtn {
+            background-color: #dc3545; /* 빨간색 강조 버튼 */
+            border-color: #dc3545;
+            color: #ffffff;
+        }
+
+        #removeBtn:hover {
+            background-color: #c82333;
+        }
+
+        div.folder-select {
+            display: flex;
+            align-items: center;
+        }
+
+        #folderPath::-webkit-scrollbar {
+            height: 0px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>지정 폴더 삭제 스케쥴러</h2>
+
+<div class="folder-select">
+    <button id="selectBtn">폴더 선택</button>
+    <span id="folderPath">선택된 폴더: 없음</span>
+</div>
+
+<div>
+    <label for="timeInput">실행 시간 (HH:mm):</label>
+    <input type="time" id="timeInput" value="00:00" />
+</div>
+
+<div>
+    <button id="registerBtn">스케줄러 등록</button>
+    <button id="removeBtn">스케줄러 제거</button>
+</div>
+
+<script src="renderer.js"></script>
+
+</body>
+</html>
